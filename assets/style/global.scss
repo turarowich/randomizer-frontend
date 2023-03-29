@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
+h6, p, blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-style: normal;
+  font-weight: normal;
+}
+
+* {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+img, fieldset, a img {
+  border: none;
+}
+
+.default-container {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 20px;
+  min-height: 90vh;
+  @media (max-width: 1240px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 480px){
+    padding: 0 16px;
+  }
+}
+
+.v-application--wrap {
+  justify-content: space-between;
+}
+.v-application p {
+  margin-bottom: 0 !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+}
+button {
+  cursor: pointer;
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+textarea {
+  overflow: auto;
+}
+input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+div, input, textarea, select, button,
+h1, h2, h3, h4, h5, h6, a, span, a:focus {
+  outline: none;
+  text-decoration: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// swiper
+
+.swiper-container {
+  overflow: hidden;
+}
+
+// animations
+
+.error-enter, .error-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.slide-x-enter, .slide-x-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.slide-y-enter, .slide-y-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.scale-enter-active, .scale-leave-active {
+  transition: 0.3s;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  transform: scale(0);
+  opacity: 0;
+}
+
+::-webkit-scrollbar{
+  position: absolute;
+  left: 0;
+  width: 4px;
+}
+
+
+::-webkit-scrollbar-track  {
+  background: #D4DBEE;
+}
+
+
+::-webkit-scrollbar-thumb{
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4DBEE;
+}
+
+.woot--bubble-holder .woot-widget-bubble {
+  z-index: 100 !important;
+}
+
+.branding--link {
+  display: none;
+}

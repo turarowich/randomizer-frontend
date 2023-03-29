@@ -1,0 +1,16 @@
+[
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "/home/mrx/shop/easyshopfront/pages/admin.vue",
+    "chunkName": "pages/admin",
+    "_name": "_5452c458"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/mrx/shop/easyshopfront/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_22e3705b"
+  }
+]
