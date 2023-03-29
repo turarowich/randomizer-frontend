@@ -65,8 +65,7 @@ export default {
         list.value.push(0)
       }
     })
-    const URL = process.env.NODE_ENV === "production" ? undefined : "http://localhost:4000";
-
+    const URL = "http://188.225.75.140:3000/:4000";
     const socket = io(URL, {
       withCredentials: true
     });
