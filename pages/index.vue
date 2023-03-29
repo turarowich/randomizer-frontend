@@ -15,7 +15,7 @@ import { io } from "socket.io-client";
 export default {
     name: 'Index',
     setup() {
-        const URL = "http://188.225.75.140:3000/:4000";
+        const URL = "http://188.225.75.140:4000";
         const socket = io(URL);
         const list = ref([0,0,0,0,0,0,0,0,0])
         const numList = computed(() => list.value.map(item => {
