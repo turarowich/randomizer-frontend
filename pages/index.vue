@@ -15,7 +15,7 @@ import { io } from "socket.io-client";
 export default {
     name: 'Index',
     setup() {
-        const URL = "http://188.225.75.140:4000";
+        const URL = process.env.NODE_ENV !== 'production' ? "http://localhost:4000" : 'http://188.225.75.140:4000'
         const socket = io(URL);
         const list = ref([0,0,0,0,0,0,0,0,0])
         const numList = computed(() => list.value.map(item => {
@@ -84,6 +84,30 @@ export default {
         font-size: 106px;
         line-height: 134px;
         color: #FFFFFF;
+    }
+    @media (max-width: 1400px) {
+        &-title{
+            font-size: 43px;
+        }
+        &-list{
+            width: 100%;
+        }
+        &-item{
+            font-size: 76px;
+            line-height: 84px;
+        }
+    }
+    @media (max-width: 960px) {
+        &-title{
+            font-size: 23px;
+        }
+        &-list{
+            width: 90%;
+        }
+        &-item{
+            font-size: 36px;
+            line-height: 44px;
+        }
     }
 }
 </style>

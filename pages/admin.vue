@@ -23,6 +23,7 @@
               <div>Опции</div>
               <div>
                 <ui-checkbox >Запомнить результаты</ui-checkbox>
+                <div @click="history = []">Очистить историю</div>
               </div>
             </div>
           </div>
@@ -36,7 +37,17 @@
           </div>
           <div class="card-handlar">
             <button @click="reset" outline>СБРОСИТЬ</button>
-            <button @click="startStopHand">{{ started ? 'СТАРТ' : 'СТОП' }}</button>
+            <button @click="startStopHand">{{ isStarted ? 'СТАРТ' : 'СТОП' }}</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div v-for="(card,k) in history" class="card">
+            <div class="card-title">Победители #{{ k + 1 }}</div>
+            <div class="card-winners">
+              <div v-for="(item) in card" class="card-winner">
+                {{item}}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -45,7 +56,7 @@
 </template>
 
 <script>
-import { ref, reactive, watch, useRouter,computed } from '@nuxtjs/composition-api'
+import { ref, reactive, watch, onMounted ,computed } from '@nuxtjs/composition-api'
 import { io } from "socket.io-client";
 export default {
   name: 'Pageindex',
@@ -55,9 +66,11 @@ export default {
     const interval = ref(0)
     const numLength = ref(9)
     const list = ref([0,0,0,0,0,0,0,0,0])
+    const history = ref([])
     const numList = computed(() => list.value)
-    const started = ref(false)
+    const started = ref(true)
     const max = ref(12000)
+    const isStarted = computed(() => started.value)
     watch(numLength, (newLength) => {
       if(!newLength) return list.value = [0];
       list.value = []
@@ -65,13 +78,20 @@ export default {
         list.value.push(0)
       }
     })
-    const URL = "http://188.225.75.140:4000";
+    const URL = process.env.NODE_ENV !== 'production' ? "http://localhost:4000" : 'http://188.225.75.140:4000'
     const socket = io(URL, {
       withCredentials: true
     });
-
-    socket.on("connect", () => {
-    });
+    // onMounted(() => {
+    //   socket.on("connect", () => {
+    //     socket.on('initHistory', ({history}) => {
+    //       history.value = history
+    //     })
+    //   });
+    //   socket.on('initHistory', ({history}) => {
+    //       history.value = history
+    //   })
+    // })
     const random = (max) => {
       return Math.floor(Math.random() * max)
     }
@@ -88,6 +108,7 @@ export default {
     const stop = () => {
       socket.emit("stop", {result: list.value});
       clearInterval(interval.value)
+      history.value.push(list.value)
     }
     const startStopHand = () => {
       if(started.value) {
@@ -108,7 +129,9 @@ export default {
       started,
       startStopHand,
       reset,
-      max
+      max,
+      history,
+      isStarted
     }
   }
 }
@@ -119,6 +142,12 @@ export default {
     &__content {
       padding: 32px;
       margin-top: 48px;
+      & .cards {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
       & .card{
         background: #FFFFFF;
         border: 2px solid #9155FD;
@@ -199,6 +228,19 @@ export default {
               display: flex;
               align-items: center;
               gap: 20px;
+            }
+            &:last-child div{
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: flex-start;
+              gap: 20px;
+              div, label {
+                width: 100%;
+                align-items: flex-start;
+                cursor: pointer;
+                color: rgba(58, 53, 65, 0.6);
+              }
             }
             div{
               &:first-child{
