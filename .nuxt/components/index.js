@@ -1,4 +1,4 @@
-export { default as UiCheckbox } from '../../components/ui/Checkbox.vue'
+export const UiCheckbox = () => import('../../components/ui/Checkbox.vue' /* webpackChunkName: "components/ui-checkbox" */).then(c => wrapFunctional(c.default || c))
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
