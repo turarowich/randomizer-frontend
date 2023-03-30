@@ -19,7 +19,6 @@ export default {
         const socket = io(URL);
         const list = ref([0,0,0,0,0,0,0,0,0])
         const numList = computed(() => list.value.map(item => {
-            console.log(item);
             if(item.toString().length < 6) {
                 return '0'.repeat(6 - item.toString().length) + item.toString()
             }

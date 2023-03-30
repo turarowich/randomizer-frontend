@@ -22,7 +22,7 @@
             <div class="index__content_header-settings-block">
               <div>Опции</div>
               <div>
-                <ui-checkbox >Запомнить результаты</ui-checkbox>
+                <ui-checkbox v-model="doSave" >Запомнить результаты</ui-checkbox>
                 <div @click="history = []">Очистить историю</div>
               </div>
             </div>
@@ -71,8 +71,12 @@ export default {
     const started = ref(true)
     const max = ref(12000)
     const isStarted = computed(() => started.value)
+    const doSave = ref(false)
     watch(numLength, (newLength) => {
       if(!newLength) return list.value = [0];
+      if(newLength > 9) {
+        numLength.value = 9
+      }
       list.value = []
       for(let i = 0; i < newLength; i++) {
         list.value.push(0)
@@ -108,7 +112,9 @@ export default {
     const stop = () => {
       socket.emit("stop", {result: list.value});
       clearInterval(interval.value)
-      history.value.push(list.value)
+      if(doSave.value) {
+        history.value.push(list.value)
+      }
     }
     const startStopHand = () => {
       if(started.value) {
@@ -131,7 +137,8 @@ export default {
       reset,
       max,
       history,
-      isStarted
+      isStarted,
+      doSave
     }
   }
 }
