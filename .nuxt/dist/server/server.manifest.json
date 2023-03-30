@@ -1,0 +1,15 @@
+{
+  "entry": "server.js",
+  "files": {
+    "components/ui-checkbox.js": "components/ui-checkbox.js",
+    "pages/admin.js": "pages/admin.js",
+    "pages/index.js": "pages/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "components/ui-checkbox.js": "components/ui-checkbox.js.map",
+    "pages/admin.js": "pages/admin.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "server.js": "server.js.map"
+  }
+}
