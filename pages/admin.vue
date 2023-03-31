@@ -8,7 +8,7 @@
             <div class="index__content_header-settings-block">
               <div>Диапазон участников </div>
               <div>
-                <input disabled type="text" placeholder="от 1">
+                <input v-model="min" type="text" placeholder="от 1">
                 <div>-</div>
                 <input v-model="max" type="text" placeholder="до 12000">
               </div>
@@ -64,18 +64,19 @@ export default {
   },
   setup () {
     const interval = ref(0)
-    const numLength = ref(9)
-    const list = ref([0,0,0,0,0,0,0,0,0])
+    const numLength = ref(12)
+    const list = ref([0,0,0,0,0,0,0,0,0,0,0,0])
     const history = ref([])
     const numList = computed(() => list.value)
     const started = ref(true)
     const max = ref(12000)
+    const min = ref(1)
     const isStarted = computed(() => started.value)
     const doSave = ref(false)
     watch(numLength, (newLength) => {
       if(!newLength) return list.value = [0];
-      if(newLength > 9) {
-        numLength.value = 9
+      if(newLength > 12) {
+        numLength.value = 12
       }
       list.value = []
       for(let i = 0; i < newLength; i++) {
@@ -96,21 +97,21 @@ export default {
     //       history.value = history
     //   })
     // })
-    const random = (max) => {
-      return Math.floor(Math.random() * max)
+    const random = (max, min) => {
+      return Math.floor(Math.random() * (max - min) + min)
     }
 
     const start = () => {
-      socket.emit("start", {size: numLength.value, max: max.value});
+      socket.emit("start", {size: numLength.value, max: max.value, min: min.value});
       interval.value = setInterval(() => {
         list.value = list.value.map(i => {
-          return random(max.value)
+          return random(max.value, min.value)
         })
       }, 20)
     }
 
     const stop = () => {
-      socket.emit("stop", {result: list.value});
+      socket.emit("stop", {result: list.value,max: max.value, min: min.value});
       clearInterval(interval.value)
       if(doSave.value) {
         history.value.push(list.value)
@@ -126,8 +127,7 @@ export default {
     }
     const reset = () => {
       socket.emit("reset");
-      numLength.value = 9
-      list.value = [0,0,0,0,0,0,0,0,0]
+      list.value = [0,0,0,0,0,0,0,0,0,0,0,0]
     }
     return {
       numLength,
@@ -136,6 +136,7 @@ export default {
       startStopHand,
       reset,
       max,
+      min,
       history,
       isStarted,
       doSave

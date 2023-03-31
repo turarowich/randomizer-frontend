@@ -1,6 +1,7 @@
 <template>
     <div class="result">
         <div class="result-title">Победители</div>
+        <img src="@/assets/logo.png" alt="" class="result-logo">
         <div class="result-list">
             <div v-for="item in numList" class="result-item">
                 {{item}}
@@ -17,32 +18,43 @@ export default {
     setup() {
         const URL = process.env.NODE_ENV !== 'production' ? "http://localhost:4000" : 'http://188.225.75.140:4000'
         const socket = io(URL);
-        const list = ref([0,0,0,0,0,0,0,0,0])
+        const list = ref([0,0,0,0,0,0,0,0,0,0,0,0])
         const numList = computed(() => list.value.map(item => {
-            if(item.toString().length < 6) {
-                return '0'.repeat(6 - item.toString().length) + item.toString()
+            if(item.toString().length < 5) {
+                return '0'.repeat(5 - item.toString().length) + item.toString()
             }
             return item
         }))
         const interval = ref(0)
-        const random = (max) => {
-            return Math.floor(Math.random() * max)
+        const random = (max, min) => {
+            return Math.floor(Math.random() * (max - min) + min)
         }
         socket.on("connect", () => {});
-        socket.on('start', ({size, max}) => {
+        socket.on('start', ({size, max, min}) => {
             list.value = []
             for(let i = 0; i < size; i++) {
                 list.value.push(0)
             }
+            clearInterval(interval.value)
             interval.value = setInterval(() => {
                 list.value = list.value.map(i => {
-                    return random(max)
+                    return random(max, min)
                 })
             }, 20)
         })
-        socket.on('stop', ({result}) => {
+        socket.on('stop', ({result, max, min}) => {
             list.value = result
             clearInterval(interval.value)
+            let time = 0
+            interval.value = setInterval(() => {
+                time += 20
+                list.value = list.value.map((i,k) => {
+                    if((3000 / result.length) * k > time) {
+                        return random(max, min)
+                    }
+                    return i
+                })
+            }, 20)
         })
         socket.on('reset', () => {
             list.value = [0,0,0,0,0,0,0,0,0]
@@ -64,11 +76,18 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    &-logo{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 100px;
+    }
     &-title{
         font-weight: 500;
         font-size: 63px;
         line-height: 80px;
         color: #FFFFFF;
+        font-family: 'Druk Text Wide Trial', sans-serif;
     }
     &-list{
         display: flex;
@@ -83,6 +102,8 @@ export default {
         font-size: 106px;
         line-height: 134px;
         color: #FFFFFF;
+        text-align: center;
+        font-family: 'Druk Text Wide Trial', sans-serif;
     }
     @media (max-width: 1400px) {
         &-title{
