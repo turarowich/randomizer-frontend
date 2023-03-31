@@ -20,8 +20,8 @@ export default {
         const socket = io(URL);
         const list = ref([0,0,0,0,0,0,0,0,0,0,0,0])
         const numList = computed(() => list.value.map(item => {
-            if(item.toString().length < 5) {
-                return '0'.repeat(5 - item.toString().length) + item.toString()
+            if(item.toString().length < 4) {
+                return '0'.repeat(4 - item.toString().length) + item.toString()
             }
             return item
         }))
@@ -49,7 +49,7 @@ export default {
             interval.value = setInterval(() => {
                 time += 20
                 list.value = list.value.map((i,k) => {
-                    if((3000 / result.length) * k > time) {
+                    if((2500 / result.length) * k > time) {
                         return random(max, min)
                     }
                     return i
