@@ -1,7 +1,7 @@
 <template>
     <div class="result">
         <div class="result-title">Победители</div>
-        <img src="@/assets/logo.png" alt="" class="result-logo">
+        <img src="@/assets/logo.svg" alt="" class="result-logo">
         <div class="result-list">
             <div v-for="item in numList" class="result-item">
                 {{item}}
@@ -20,8 +20,8 @@ export default {
         const socket = io(URL);
         const list = ref([0,0,0,0,0,0,0,0,0,0,0,0])
         const numList = computed(() => list.value.map(item => {
-            if(item.toString().length < 4) {
-                return '0'.repeat(4 - item.toString().length) + item.toString()
+            if(item === 0) {
+                return '0'.repeat(4)
             }
             return item
         }))
@@ -38,21 +38,37 @@ export default {
             clearInterval(interval.value)
             interval.value = setInterval(() => {
                 list.value = list.value.map(i => {
-                    return random(max, min)
+                    if(max >= 10000) {
+                        const rand = random(max, min).toString()
+                        return rand.length >= 5 ? rand :  '0'.repeat(5 - rand.length) + rand
+                    } else {
+                        const rand = random(max, min).toString()
+                        return '0'.repeat(4 - rand.length) + rand
+                    }
                 })
             }, 20)
         })
         socket.on('stop', ({result, max, min}) => {
-            list.value = result
             clearInterval(interval.value)
             let time = 0
             interval.value = setInterval(() => {
+                list.value = result
                 time += 20
                 list.value = list.value.map((i,k) => {
-                    if(2500 * k > time) {
-                        return random(max, min)
+                    if(1000 * k > time) {
+                        if(max >= 10000) {
+                            const rand = random(max, min).toString()
+                            return rand.length >= 5 ? rand :  '0'.repeat(5 - rand.length) + rand
+                        } else {
+                            const rand = random(max, min).toString()
+                            return '0'.repeat(4 - rand.length) + rand
+                        }
                     }
-                    return i
+                    if(max >= 10000) {
+                        return i.toString().length >= 5 ? i.toString() :  '0'.repeat(5 - i.toString().length) + i.toString()
+                    } else {
+                        return '0'.repeat(4 - i.toString().length) + i.toString()
+                    }
                 })
             }, 20)
         })
@@ -80,7 +96,8 @@ export default {
         position: absolute;
         right: 20px;
         top: 20px;
-        width: 100px;
+        width: 150px;
+        object-fit: contain;
     }
     &-title{
         font-weight: 500;
@@ -94,15 +111,15 @@ export default {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 30px;
         width: 90%;
     }
     &-item{
         font-weight: 500;
         font-size: 106px;
         line-height: 134px;
-        color: #FFFFFF;
+        width: 30%;
         text-align: center;
+        color: #FFFFFF;
         font-family: 'Druk Text Wide Trial', sans-serif;
     }
     @media (max-width: 1400px) {
@@ -123,8 +140,10 @@ export default {
         }
         &-list{
             width: 90%;
+            gap: 30px;
         }
         &-item{
+            width: auto;
             font-size: 36px;
             line-height: 44px;
         }
