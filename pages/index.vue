@@ -49,7 +49,7 @@ export default {
             interval.value = setInterval(() => {
                 time += 20
                 list.value = list.value.map((i,k) => {
-                    if((2500 / result.length) * k > time) {
+                    if(2500 * k > time) {
                         return random(max, min)
                     }
                     return i
