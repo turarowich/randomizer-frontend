@@ -27,7 +27,7 @@ export default {
         }))
         const interval = ref(0)
         const random = (max, min) => {
-            return Math.floor(Math.random() * (max - min) + min)
+            return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         socket.on("connect", () => {});
         socket.on('start', ({size, max, min}) => {

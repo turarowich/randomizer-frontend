@@ -115,7 +115,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 35);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -497,94 +497,94 @@ __webpack_require__.d(__webpack_exports__, "d", function() { return /* binding *
 // UNUSED EXPORTS: createApp, createRef, customRef, defineAsyncComponent, del, effectScope, getCurrentInstance, getCurrentScope, h, inject, isRaw, isReactive, isReadonly, isRef, markRaw, nextTick, onActivated, onBeforeMount, onBeforeUnmount, onBeforeUpdate, onDeactivated, onErrorCaptured, onMounted, onScopeDispose, onServerPrefetch, onUnmounted, onUpdated, provide, proxyRefs, reactive, readonly, set, shallowReactive, shallowReadonly, shallowRef, toRaw, toRef, toRefs, triggerRef, unref, useAttrs, useCSSModule, useCssModule, useSlots, version, warn, watchEffect, watchPostEffect, watchSyncEffect, defineComponent, defineNuxtMiddleware, defineNuxtPlugin, onGlobalSetup, reqRef, reqSsrRef, setSSRContext, shallowSsrRef, ssrPromise, ssrRef, useAsync, useContext, useFetch, useMeta, useRoute, useRouter, useStatic, useStore, withContext, wrapProperty
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.weak-map.delete-all.js"
-var esnext_weak_map_delete_all_js_ = __webpack_require__(31);
+var esnext_weak_map_delete_all_js_ = __webpack_require__(47);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.delete-all.js"
-var esnext_map_delete_all_js_ = __webpack_require__(32);
+var esnext_map_delete_all_js_ = __webpack_require__(48);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.every.js"
-var esnext_map_every_js_ = __webpack_require__(33);
+var esnext_map_every_js_ = __webpack_require__(49);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.filter.js"
-var esnext_map_filter_js_ = __webpack_require__(34);
+var esnext_map_filter_js_ = __webpack_require__(50);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.find.js"
-var esnext_map_find_js_ = __webpack_require__(35);
+var esnext_map_find_js_ = __webpack_require__(51);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.find-key.js"
-var esnext_map_find_key_js_ = __webpack_require__(36);
+var esnext_map_find_key_js_ = __webpack_require__(52);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.includes.js"
-var esnext_map_includes_js_ = __webpack_require__(37);
+var esnext_map_includes_js_ = __webpack_require__(53);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.key-of.js"
-var esnext_map_key_of_js_ = __webpack_require__(38);
+var esnext_map_key_of_js_ = __webpack_require__(54);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.map-keys.js"
-var esnext_map_map_keys_js_ = __webpack_require__(39);
+var esnext_map_map_keys_js_ = __webpack_require__(55);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.map-values.js"
-var esnext_map_map_values_js_ = __webpack_require__(40);
+var esnext_map_map_values_js_ = __webpack_require__(56);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.merge.js"
-var esnext_map_merge_js_ = __webpack_require__(41);
+var esnext_map_merge_js_ = __webpack_require__(57);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.reduce.js"
-var esnext_map_reduce_js_ = __webpack_require__(42);
+var esnext_map_reduce_js_ = __webpack_require__(58);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.some.js"
-var esnext_map_some_js_ = __webpack_require__(43);
+var esnext_map_some_js_ = __webpack_require__(59);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.map.update.js"
-var esnext_map_update_js_ = __webpack_require__(44);
+var esnext_map_update_js_ = __webpack_require__(60);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.add-all.js"
-var esnext_set_add_all_js_ = __webpack_require__(45);
+var esnext_set_add_all_js_ = __webpack_require__(19);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.delete-all.js"
-var esnext_set_delete_all_js_ = __webpack_require__(46);
+var esnext_set_delete_all_js_ = __webpack_require__(20);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.difference.js"
-var esnext_set_difference_js_ = __webpack_require__(47);
+var esnext_set_difference_js_ = __webpack_require__(21);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.every.js"
-var esnext_set_every_js_ = __webpack_require__(48);
+var esnext_set_every_js_ = __webpack_require__(22);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.filter.js"
-var esnext_set_filter_js_ = __webpack_require__(49);
+var esnext_set_filter_js_ = __webpack_require__(23);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.find.js"
-var esnext_set_find_js_ = __webpack_require__(50);
+var esnext_set_find_js_ = __webpack_require__(24);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.intersection.js"
-var esnext_set_intersection_js_ = __webpack_require__(51);
+var esnext_set_intersection_js_ = __webpack_require__(25);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.is-disjoint-from.js"
-var esnext_set_is_disjoint_from_js_ = __webpack_require__(52);
+var esnext_set_is_disjoint_from_js_ = __webpack_require__(26);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.is-subset-of.js"
-var esnext_set_is_subset_of_js_ = __webpack_require__(53);
+var esnext_set_is_subset_of_js_ = __webpack_require__(27);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.is-superset-of.js"
-var esnext_set_is_superset_of_js_ = __webpack_require__(54);
+var esnext_set_is_superset_of_js_ = __webpack_require__(28);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.join.js"
-var esnext_set_join_js_ = __webpack_require__(55);
+var esnext_set_join_js_ = __webpack_require__(29);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.map.js"
-var esnext_set_map_js_ = __webpack_require__(56);
+var esnext_set_map_js_ = __webpack_require__(30);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.reduce.js"
-var esnext_set_reduce_js_ = __webpack_require__(57);
+var esnext_set_reduce_js_ = __webpack_require__(31);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.some.js"
-var esnext_set_some_js_ = __webpack_require__(58);
+var esnext_set_some_js_ = __webpack_require__(32);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.symmetric-difference.js"
-var esnext_set_symmetric_difference_js_ = __webpack_require__(59);
+var esnext_set_symmetric_difference_js_ = __webpack_require__(33);
 
 // EXTERNAL MODULE: external "core-js/modules/esnext.set.union.js"
-var esnext_set_union_js_ = __webpack_require__(60);
+var esnext_set_union_js_ = __webpack_require__(34);
 
 // EXTERNAL MODULE: external "vue"
 var external_vue_ = __webpack_require__(1);
@@ -1305,7 +1305,7 @@ module.exports = require("cookie");
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(23);
+var content = __webpack_require__(39);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1322,7 +1322,7 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(25);
+var content = __webpack_require__(41);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1346,15 +1346,111 @@ module.exports = require("vue-meta");
 
 /***/ }),
 /* 19 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.add-all.js");
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.delete-all.js");
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.difference.js");
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.every.js");
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.filter.js");
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.find.js");
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.intersection.js");
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.is-disjoint-from.js");
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.is-subset-of.js");
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.is-superset-of.js");
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.join.js");
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.map.js");
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.reduce.js");
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.some.js");
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.symmetric-difference.js");
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.set.union.js");
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(20);
-__webpack_require__(21);
+__webpack_require__(36);
+__webpack_require__(37);
 module.exports = __webpack_require__(63);
 
 
 /***/ }),
-/* 20 */
+/* 36 */
 /***/ (function(module, exports) {
 
 global.installComponents = function (component, components) {
@@ -1398,7 +1494,7 @@ function provideFunctionalComponents(component, components) {
 
 
 /***/ }),
-/* 21 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1413,7 +1509,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_vue_composition_api__WEBPACK_IMP
 /* harmony default export */ __webpack_exports__["default"] = (() => {});
 
 /***/ }),
-/* 22 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1424,7 +1520,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 23 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1437,7 +1533,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 24 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1448,7 +1544,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 25 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1461,20 +1557,20 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 26 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(27);
+var content = __webpack_require__(43);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 __webpack_require__(8).default("347e6e68", content, true)
 
 /***/ }),
-/* 27 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1490,7 +1586,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 28 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1506,20 +1602,20 @@ const store = () => new vuex__WEBPACK_IMPORTED_MODULE_0__["Store"]({
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),
-/* 29 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(30);
+var content = __webpack_require__(46);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 __webpack_require__(8).default("a7117bb2", content, true)
 
 /***/ }),
-/* 30 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1532,184 +1628,88 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 31 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.weak-map.delete-all.js");
 
 /***/ }),
-/* 32 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.delete-all.js");
 
 /***/ }),
-/* 33 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.every.js");
 
 /***/ }),
-/* 34 */
+/* 50 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.filter.js");
 
 /***/ }),
-/* 35 */
+/* 51 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.find.js");
 
 /***/ }),
-/* 36 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.find-key.js");
 
 /***/ }),
-/* 37 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.includes.js");
 
 /***/ }),
-/* 38 */
+/* 54 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.key-of.js");
 
 /***/ }),
-/* 39 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.map-keys.js");
 
 /***/ }),
-/* 40 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.map-values.js");
 
 /***/ }),
-/* 41 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.merge.js");
 
 /***/ }),
-/* 42 */
+/* 58 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.reduce.js");
 
 /***/ }),
-/* 43 */
+/* 59 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.map.some.js");
 
 /***/ }),
-/* 44 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.map.update.js");
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.add-all.js");
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.delete-all.js");
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.difference.js");
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.every.js");
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.filter.js");
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.find.js");
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.intersection.js");
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.is-disjoint-from.js");
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.is-subset-of.js");
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.is-superset-of.js");
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.join.js");
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.map.js");
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.reduce.js");
-
-/***/ }),
-/* 58 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.some.js");
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.set.symmetric-difference.js");
-
-/***/ }),
 /* 60 */
 /***/ (function(module, exports) {
 
-module.exports = require("core-js/modules/esnext.set.union.js");
+module.exports = require("core-js/modules/esnext.map.update.js");
 
 /***/ }),
 /* 61 */
@@ -2748,7 +2748,7 @@ var componentNormalizer = __webpack_require__(4);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(22)
+  var style0 = __webpack_require__(38)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -3052,7 +3052,7 @@ var nuxt_loading_render, nuxt_loading_staticRenderFns
 
 function nuxt_loading_injectStyles (context) {
   
-  var style0 = __webpack_require__(24)
+  var style0 = __webpack_require__(40)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -3072,7 +3072,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
 
 /* harmony default export */ var nuxt_loading = (nuxt_loading_component.exports);
 // EXTERNAL MODULE: ./assets/style/global.scss
-var style_global = __webpack_require__(26);
+var style_global = __webpack_require__(42);
 
 // CONCATENATED MODULE: ./node_modules/vuetify-loader/lib/loader.js??ref--4!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/unplugin/dist/webpack/loaders/transform.js??ref--15-0!./layouts/default.vue?vue&type=template&id=ca7bfc98&scoped=true&
 var defaultvue_type_template_id_ca7bfc98_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Nuxt')}
@@ -3302,7 +3302,7 @@ external_vue_default.a.use(external_vuex_default.a);
 let store_store = {};
 
 (function updateModules() {
-  store_store = normalizeRoot(__webpack_require__(28), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
+  store_store = normalizeRoot(__webpack_require__(44), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
   // Enforce store modules
 
   store_store.modules = store_store.modules || {}; // If the environment supports hot reloading...
@@ -3559,7 +3559,7 @@ If you're seeing "$attrs is readonly", it's caused by this`);
   });
 }
 // EXTERNAL MODULE: ./node_modules/vuetify/src/styles/main.sass
-var main = __webpack_require__(29);
+var main = __webpack_require__(45);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/locale/en.js
 /* harmony default export */ var en = ({

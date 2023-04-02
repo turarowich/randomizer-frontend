@@ -98,7 +98,7 @@ export default {
     //   })
     // })
     const random = (max, min) => {
-      return Math.floor(Math.random() * (max - min) + min)
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     const start = () => {
@@ -111,8 +111,22 @@ export default {
     }
 
     const stop = () => {
-      socket.emit("stop", {result: list.value,max: max.value, min: min.value});
       clearInterval(interval.value)
+      function generateUniqueRandomNumbers() {
+        const usedNumbers = new Set();
+        const randomNumbers = [];
+        history.value.map(i => i.map(j => usedNumbers.add(j)))
+        while (randomNumbers.length < numLength.value) {
+          let randomNumber = random(max.value, min.value)
+          if (!usedNumbers.has(randomNumber)) {
+            usedNumbers.add(randomNumber);
+            randomNumbers.push(randomNumber);
+          }
+        }
+        return randomNumbers;
+      }
+      list.value = generateUniqueRandomNumbers()
+      socket.emit("stop", {result: list.value,max: max.value, min: min.value});
       if(doSave.value) {
         history.value.push(list.value)
       }
